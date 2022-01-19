@@ -1,0 +1,7 @@
+{
+  "name": "TrackUnit Images Challenge",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

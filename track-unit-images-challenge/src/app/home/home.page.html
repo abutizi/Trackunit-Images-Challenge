@@ -1,0 +1,52 @@
+
+<ion-header [translucent]="true">
+  <ion-toolbar style="padding-top: 12px;">
+    <ion-searchbar inputmode='text' debounce='250' clearInput='true' placeholder='Search...'
+      (ionChange)='updateFilter($event)'></ion-searchbar>
+
+    <ion-select multiple="false">
+      <ion-select-option value="0">
+        Tilføj eller redigere grupper
+      </ion-select-option>
+    </ion-select>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  
+  <ion-grid>
+  
+    <ion-row class="cards">
+  
+      <ion-col size-xs="12" size-sm="4" size-lg="3" class="card-col"
+        *ngFor="let img of CurrImages; index as i">
+        <ion-card class="product-card">
+          <img [src]="img.images.downsized_medium.url" />
+          <ion-card-header>
+            <ion-card-subtitle>TEXT HERE</ion-card-subtitle>
+          </ion-card-header>
+  
+          <ion-card-content *ngIf="helper?.LoggedIn">
+            
+          </ion-card-content>
+  
+        </ion-card>
+      </ion-col>
+  
+    </ion-row>
+  
+  </ion-grid>
+
+
+</ion-content>
+
+
+<ion-footer>
+  <ion-item style="padding: 1rem 0;">
+    <ion-button slot="start" size="large" color="secondary" (click)="updateCurrImages(-1)">PREV</ion-button>
+    <ion-button slot="end" size="large" color="primary" (click)="updateCurrImages(1)">NEXT</ion-button>
+  </ion-item>
+  <br>
+</ion-footer>
